@@ -80,8 +80,8 @@ from mask2former import (
 
 
 from semantic_dataset import register_semantic_dataset
-dataset_root_train_200 = "/home/yzbj10/dataDisk/imagedental/wzy/DINOv2_mmseg/Mask2Former_DINOv2/tool_data/7class_label"
-dataset_root_val = "/home/yzbj10/dataDisk/imagedental/wzy/DINOv2_mmseg/Mask2Former_DINOv2/tool_data/7class_label"
+dataset_root_train_200 = "tool_data/7class_label"
+dataset_root_val = "tool_data/7class_label"
 register_semantic_dataset("my_dataset_train2", dataset_root_train_200, "train")
 register_semantic_dataset("my_dataset_val2", dataset_root_val, "val")
 
