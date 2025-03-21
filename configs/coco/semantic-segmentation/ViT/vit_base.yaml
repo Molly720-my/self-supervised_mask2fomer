@@ -1,0 +1,28 @@
+_BASE_: ../maskformer2_R50_bs16_50ep.yaml
+MODEL:
+  BACKBONE:
+    NAME: "ViTCOMMON"
+  ViTCOMMON:
+      # ViT基础参数
+    MODEL_NAME: "vit_base_patch16_224"  
+    PRETRAINED: True                    
+    PATCH_SIZE: 16                      
+    EMBED_DIM: 768                      
+    
+    # 特征金字塔参数
+    OUT_CHANNELS: 256                   
+    SCALE_FACTORS: [4.0, 2.0, 1.0, 0.5] 
+    
+    # 输出控制
+    OUT_FEATURES: ["res2", "res3", "res4", "res5"]  
+    SQUARE_PAD: 0                       
+    
+    NORM: "LN"                         
+    USE_CHECKPOINT: True                
+    
+  WEIGHTS: " "
+  PIXEL_MEAN: [123.675, 116.280, 103.530]
+  PIXEL_STD: [58.395, 57.120, 57.375]
+USE_LAYER_DECAY: True
+LR_DECAY_RATE: 0.65
+OUTPUT_DIR: " "
